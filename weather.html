@@ -33,6 +33,7 @@
 		input {
 			width: 200px;
 			height: 40px;
+			font-size: 20px;
 		}
 
 		#check-weather {
@@ -49,10 +50,22 @@
 			margin: 10px auto;
 			/*border: 1px solid black;*/
 			background-color: #eeeeee;
-			text-align: left;
 			padding: 15px;
 		}
 
+		#my-weather p {
+			text-align: left;
+			/*margin: 0 15px 15px 15px;*/
+			font-size: 22px;
+			color: #333;
+		}
+
+		.feedback {
+			color: #778899;
+			font-size: 18px;
+			font-weight: lighter;
+			/*height: 30px;*/
+		}
 	</style>
 </head>
 <body>
@@ -66,9 +79,12 @@
 
 	<div id="my-weather">
 
-		<p>Current Location: <span id="location"></span></p>
-		<p>Temperature: <span id="temp"></span></p>
-		<p>Wind Speed: <span id="wind"></span></p>
+		<p><b>Current Location: </b><br>
+			<span id="location" class="feedback"></span></p>
+		<p><b>Temperature: </b><br>
+			<span id="temp" class="feedback"></span></p>
+		<p><b>Wind Speed: </b><br>
+			<span id="wind" class="feedback"></span></p>
 	</div>
 
 
