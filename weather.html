@@ -1,0 +1,114 @@
+<html>
+<head>
+	<title>Weather App</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<style>
+		
+		body {
+			background-color: #778899;
+		}
+
+		h1 {
+			color: white;
+			font-size: 44px;
+		}
+
+		#input-field {
+			width: 30%;
+			margin: 10px auto;
+			/*border: 1px solid black;*/
+			background-color: #eeeeee;
+			text-align: center;
+			padding: 15px;
+		}
+
+		#input-field p {
+			text-align: center;
+			margin: 0 15px 15px 15px;
+			font-size: 24px;
+			color: #333;
+		}
+
+		input {
+			width: 200px;
+			height: 40px;
+		}
+
+		#check-weather {
+			margin: 0 0 0 0;
+			width: 150px;
+			height: 60px;
+			background-color: #778899;
+			color: white;
+			font-size: 20px;
+		}
+
+		#my-weather {
+			width: 30%;
+			margin: 10px auto;
+			/*border: 1px solid black;*/
+			background-color: #eeeeee;
+			text-align: left;
+			padding: 15px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<h1 align="center">What's My Weather?</h1>
+	<div id="input-field">
+		<p>City <input type="text" id="city"></p>
+		<p>State <input type="text" id="state"></p>
+		<button id="check-weather">Tell Me Now!</button>
+	</div>
+
+	<div id="my-weather">
+
+		<p>Current Location: <span id="location"></span></p>
+		<p>Temperature: <span id="temp"></span></p>
+		<p>Wind Speed: <span id="wind"></span></p>
+	</div>
+
+
+<!--SCRIPTS-->
+<!--AJAX-->
+<script type="text/javascript">
+
+	$('#check-weather').on('click', function(){
+
+		var state = $('#state').val();
+		var city = $('#city').val();
+
+		$.ajax({
+			type: 'GET',
+			//need to use variables to 'GET' from correct url
+			url: 'http://api.wunderground.com/api/a40d67f295f63f82/conditions/q/' + state + '/' + city + '.json',
+			success: function(r) {
+				var location = r.current_observation.display_location.full;
+				var temp = r.current_observation.temperature_string;
+				var wind = r.current_observation.wind_string;
+				
+				//For testing your variables
+				// console.log(location);
+				// console.log(temp);
+				// console.log(wind);
+
+				$("#location").text(location);
+				$("#temp").text(temp);
+				$("#wind").text(wind);
+			},
+			error: function(){
+				alert('error loading');
+			}
+		}); //closes AJAX call
+
+	}); //closes click function
+
+</script>
+
+
+
+</body>
+</html>
