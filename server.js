@@ -1,12 +1,11 @@
-var http = require('http');
+var app = require('express')();
+var http = require('http').Server(app);
 
+app.get('/', function(req, res){
+	res.sendFile(__dirname + '/index.html');
+});
 
-function onRequest(request, response){
-	console.log("Our user made a request" + request.URL); //log something out
-	response.writeHead(200, {"Context-Type": "text/plain"}); //set up response and send text
-	response.write("Here is your crazy data, bro."); //send the text or info
-	response.end(); //
-}
+http.listen(5000, function(){
+	console.log('listening on *:5000');
+});
 
-http.createServer(onRequest).listen(8888);
-console.log("Server is now running");

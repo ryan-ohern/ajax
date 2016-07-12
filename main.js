@@ -13,7 +13,7 @@
 // console.log("Server is now running");
 
 $( document ).ready(function(){
-
+	alert("jquery is working!");
 	var $friends = $('#friends');
 	var $name = $('#name');
 	var $age = $('#age');

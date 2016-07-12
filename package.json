@@ -1,0 +1,8 @@
+{
+  "name": "ajax-example",
+  "version": "0.0.1",
+  "description": "ajax app",
+  "dependencies": {
+    "express": "^4.10.2"
+  }
+}

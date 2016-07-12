@@ -2,6 +2,11 @@
 <head>
 	<title>jQuery AJAX Tutorial</title>
 	<!-- <link rel="stylesheet" type="text/css" href="/main.css"> -->
+
+
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
 </head>
 <body>
 	<h1>jQuery AJAX Tutorial</h1>
@@ -14,11 +19,51 @@
 	<p>name: <input type="text" id="friend"></p>
 	<p>age: <input type="text" id="age"></p>
 	<button id="add-friend">Add!</button>
+	<script type="text/javascript">
+				
+		$( document ).ready(function(){
+			alert("jquery is working!");
+			var $friends = $('#friends');
+			var $name = $('#name');
+			var $age = $('#age');
 
-	<script type="text/javascript" src="server.js"></script>
-	<script type="text/javascript" src="main.js"></script>
-	
+			$.ajax({
+				type: 'GET',
+				url: 'http://rest.learncode.academy/api/learncode/friends',
+				success: function(friends) {
+					$.each(friends, function(i, friend){
+						$friends.append('<li>name: ' + friend.name + ', age: ' + friend.age + '</li>');
+					}); 
+				},
+				error: function(){
+					alert('error loading friends');
+				}
+			});
 
+			$('#add-friend').on('click', function(){
+				var friend = {
+					name: $name.val(),
+					age: $age.val(),
+				};
+
+				$.ajax({
+					type: 'POST',
+					url: 'http://rest.learncode.academy/api/learncode/friends',
+					date: friend,
+					success: function(newFriend) {
+						$friends.append('<li>name: ' + friend.name + ', age: ' + friend.age + '</li>');
+					},
+					error: function(){
+						alert('error saving new friend');
+					}
+				});
+			});
+
+		});
+
+
+		
+	</script>
 
 </body>
 </html>
