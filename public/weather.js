@@ -1,3 +1,4 @@
+$(function(){
 	$('#check-weather').on('click', function(){
 
 		var state = $('#state').val();
@@ -49,3 +50,4 @@
 		}); //closes AJAX call
 
 	}); //closes click function
+});
