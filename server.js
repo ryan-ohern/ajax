@@ -2,7 +2,7 @@
 // var http = require('http').Server(app);
 
 // // app.use('/static', express.static(__dirname + '/public'));
-// // app.use(express.static('public'));
+// app.use(express.static('public'));
 // // app.use(express.static(__dirname + '/public'));
 // // app.use(express.static('src/views'));
 // app.use(express.static(path.join(__dirname, '/public')));
@@ -26,7 +26,8 @@ var port = process.env.PORT || 8080;
 // app.set('view engine', 'ejs');
 
 // make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
 // set the home page route
 app.get('/', function(req, res) {
