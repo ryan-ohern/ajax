@@ -1,3 +1,89 @@
+header {
+	background-image: url("img/clouds.jpg");
+	/*background-color: #668899;*/
+	height: 250px;
+	width: 100%;
+}
+
+header h1 {
+	color: white;
+	font-family: Montserrat;
+	font-size: 54px;
+	padding: 0 0 0 0;
+	text-align: center;
+
+}
+
+#header-title {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#intro-text {
+	/*margin: 0 auto;*/
+}
+
 body {
-	background-color: red;
+	background-color: #eeeeee;
+	font-family: Lato;
+}
+
+/*h1 {
+	color: white;
+	font-size: 44px;
+}*/
+
+#input-field {
+	width: 30%;
+	margin: 10px auto;
+	/*border: 1px solid black;*/
+	background-color: #eeeeee;
+	text-align: center;
+	padding: 15px;
+}
+
+#input-field p {
+	text-align: center;
+	margin: 0 15px 15px 15px;
+	font-size: 24px;
+	color: #333;
+}
+
+input {
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	font-family: Lato;
+}
+
+#check-weather {
+	margin: 0 0 0 0;
+	width: 150px;
+	height: 60px;
+	background-color: #4270ac;
+	color: white;
+	font-size: 20px;
+	font-family: Lato;
+}
+
+#my-weather {
+	width: 30%;
+	margin: 0px auto;
+	/*border: 1px solid black;*/
+	background-color: #eee;
+	padding: 0px 0 0 0;
+}
+
+#my-weather p {
+	text-align: left;
+	/*margin: 0 15px 15px 15px;*/
+	font-size: 22px;
+	color: #333;
+}
+
+.feedback {
+	color: #668899;
+	font-size: 18px;
+	font-weight: lighter;
+	/*height: 30px;*/
 }
