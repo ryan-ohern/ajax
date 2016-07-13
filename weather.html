@@ -3,6 +3,8 @@
 	<title>Weather App</title>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="file:///Users/ryanohern/Documents/Coding/ajax/weather.css"> -->
+	<!-- <link rel="stylesheet" href="weather.css"> -->
 	
 	<!-- Bootstrap Core CSS -->
     <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -111,7 +113,11 @@
 		<p><b>Wind Speed: </b><br>
 			<span id="wind" class="feedback"></span></p>
 		<p><b>Coat? </b><br>
-			<span id="coat" class="feedback"></span></p>	
+			<span id="coat" class="feedback"></span></p>
+		<p><b>Weather </b><br>
+			<span id="weather" class="feedback"></span></p>			
+		<p><b>Sunscreen? </b><br>
+			<span id="sunscreen" class="feedback"></span></p>		
 	</div>
 
 
@@ -132,14 +138,24 @@
 				var location = r.current_observation.display_location.full;
 				var temp = r.current_observation.temp_f;
 				var wind = r.current_observation.wind_string;
+				var weather = r.current_observation.weather;
+				var needCoat = " ";
+				var needSunscreen = " ";
 				var tempConverted = parseInt(temp);
+				console.log(weather);
+				
 				if (tempConverted < 65){
-					console.log("Yes, you need a coat");
-					$("#coat").text("Yes");
+					// console.log("Yes, you need a coat");
+					needCoat = "Yes";
 				}else{
-					console.log("No, you don't need a coat");
-					$("#coat").text("No");
-				}
+					// console.log("No, you don't need a coat");
+					needCoat = "No";
+				};
+				if (weather === "sunny"){
+					needSunscreen = "Yes";
+				}else{
+					needSunscreen = "No";
+				};
 				
 				//For testing your variables
 				// console.log(location);
@@ -147,8 +163,11 @@
 				// console.log(wind);
 
 				$("#location").text(location);
-				$("#temp").text(temp + "˚ F");
+				$("#temp").text(temp + " F");
 				$("#wind").text(wind);
+				$("#coat").text(needCoat);
+				$("#sunscreen").text(needSunscreen);
+				$("#weather").text(weather);
 				
 			},
 			error: function(){
