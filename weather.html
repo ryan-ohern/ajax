@@ -3,16 +3,39 @@
 	<title>Weather App</title>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	
+	<!-- Bootstrap Core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
+
+	<!-- Inline CSS -->
 	<style>
 		
-		body {
-			background-color: #778899;
+		header {
+			background-color: #668899;
+			height: 200px;
+			width: 100%;
 		}
 
-		h1 {
+		header h1 {
+			color: white;
+			font-size: 54px;
+			padding: 65px 0 0 0;
+
+		}
+
+		body {
+			background-color: #eeeeee;
+		}
+
+		/*h1 {
 			color: white;
 			font-size: 44px;
-		}
+		}*/
 
 		#input-field {
 			width: 30%;
@@ -40,17 +63,17 @@
 			margin: 0 0 0 0;
 			width: 150px;
 			height: 60px;
-			background-color: #778899;
+			background-color: #668899;
 			color: white;
 			font-size: 20px;
 		}
 
 		#my-weather {
 			width: 30%;
-			margin: 10px auto;
+			margin: 0px auto;
 			/*border: 1px solid black;*/
-			background-color: #eeeeee;
-			padding: 15px;
+			background-color: #eee;
+			padding: 0px 0 0 0;
 		}
 
 		#my-weather p {
@@ -61,16 +84,18 @@
 		}
 
 		.feedback {
-			color: #778899;
+			color: #668899;
 			font-size: 18px;
 			font-weight: lighter;
 			/*height: 30px;*/
 		}
 	</style>
+	<style type="text/css" src="weather.css"></style>
 </head>
 <body>
-	
-	<h1 align="center">What's My Weather?</h1>
+	<header>
+		<h1 align="center">What's My Weather?</h1>
+	</header>
 	<div id="input-field">
 		<p>City <input type="text" id="city"></p>
 		<p>State <input type="text" id="state"></p>
