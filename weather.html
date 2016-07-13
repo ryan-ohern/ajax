@@ -85,6 +85,8 @@
 			<span id="temp" class="feedback"></span></p>
 		<p><b>Wind Speed: </b><br>
 			<span id="wind" class="feedback"></span></p>
+		<p><b>Coat? </b><br>
+			<span id="coat" class="feedback"></span></p>	
 	</div>
 
 
@@ -103,8 +105,16 @@
 			url: 'http://api.wunderground.com/api/a40d67f295f63f82/conditions/q/' + state + '/' + city + '.json',
 			success: function(r) {
 				var location = r.current_observation.display_location.full;
-				var temp = r.current_observation.temperature_string;
+				var temp = r.current_observation.temp_f;
 				var wind = r.current_observation.wind_string;
+				var tempConverted = parseInt(temp);
+				if (tempConverted < 65){
+					console.log("Yes, you need a coat");
+					$("#coat").text("Yes");
+				}else{
+					console.log("No, you don't need a coat");
+					$("#coat").text("No");
+				}
 				
 				//For testing your variables
 				// console.log(location);
@@ -112,8 +122,9 @@
 				// console.log(wind);
 
 				$("#location").text(location);
-				$("#temp").text(temp);
+				$("#temp").text(temp + "˚ F");
 				$("#wind").text(wind);
+				
 			},
 			error: function(){
 				alert('error loading');
