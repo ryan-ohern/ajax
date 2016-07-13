@@ -1,6 +1,9 @@
 var app = require('express')();
 var http = require('http').Server(app);
 
+app.use(express.static('public'));
+// app.use(express.static('src/views'));
+
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/weather.html');
 });
