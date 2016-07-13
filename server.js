@@ -2,7 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 
 // app.use('/static', express.static(__dirname + '/public'));
-// app.use(express.static('public'));
+app.use(express.static('public'));
 // app.use(express.static('src/views'));
 
 
