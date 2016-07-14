@@ -1,8 +1,23 @@
 {
-  "name": "ajax-example",
-  "version": "0.0.1",
-  "description": "ajax app",
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryan-ohern/ajax.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryan-ohern/ajax/issues"
+  },
+  "homepage": "https://github.com/ryan-ohern/ajax#readme",
   "dependencies": {
-    "express": "^4.10.2"
+    "express": "^4.14.0"
   }
 }
