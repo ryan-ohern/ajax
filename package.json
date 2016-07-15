@@ -19,5 +19,10 @@
   "homepage": "https://github.com/ryan-ohern/ajax#readme",
   "dependencies": {
     "express": "^4.14.0"
-  }
+  },
+
+  "engines": {
+        "node": "4.4.5",
+        "npm": "2.15.25"
+    } 
 }
