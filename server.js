@@ -1,28 +1,3 @@
-// var app = require('express')();
-// var http = require('http').Server(app);
-
-// // app.use('/static', express.static(__dirname + '/public'));
-// app.use(express.static('public'));
-// // app.use(express.static(__dirname + '/public'));
-// // app.use(express.static('src/views'));
-// app.use(express.static(path.join(__dirname, '/public')));
-
-// app.get('/', function(req, res){
-// 	res.sendFile(__dirname + '/weather.html');
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
 var express = require('express');
 var app = express();
 
@@ -31,8 +6,8 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // make express look in the public directory for assets (css/js/img)
-// app.use(express.static(__dirname + '/public'));
-app.use('/static', express.static(__dirname + './public'));
+app.use(express.static(__dirname + '/public'));
+// app.use('/static', express.static(__dirname + './public'));
 // app.use(express.static(path.join(__dirname + './public')));
 // app.use(express.static('./public'));
 
