@@ -14,26 +14,44 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="public/weather.css">
+    <!-- <link rel="stylesheet" href="public/weather.css"> -->
 	<!-- Inline CSS -->
 	
 	<style>
 		
+		body {
+		  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		  overflow-x: hidden;
+		  background-color: #eeeeee;
+		}
+		p {
+		  font-size: 20px;
+		}
+
 		header {
+			background-image: url('http://www.wallpaperawesome.com/wallpapers-awesome/wallpapers-weather-clouds-tornado-rain-cyclone-flashlights-awesome/wallpaper-massive-clouds-weather.jpg');
 			background-color: #668899;
-			height: 200px;
+			height: 265px;
 			width: 100%;
+			margin: 0 -9999rem;
+			padding: .25rem 9999rem;
 		}
 
 		header h1 {
 			color: white;
-			font-size: 54px;
+			font-size: 60px;
 			padding: 65px 0 0 0;
-
 		}
 
-		body {
-			background-color: #eeeeee;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+		  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  text-transform: uppercase;
+		  font-weight: 700;
 		}
 
 		/*h1 {
@@ -67,9 +85,17 @@
 			margin: 0 0 0 0;
 			width: 150px;
 			height: 60px;
-			background-color: #668899;
+			background-color: #233140;
 			color: white;
 			font-size: 20px;
+			font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+
+		.btn-success {
+		  color: white;
+		  background-color: #233140;
+		  border-color: #233140;
+		  font-weight: 700;
 		}
 
 		#my-weather {
@@ -98,12 +124,13 @@
 </head>
 <body>
 	<header>
-		<h1 align="center">What's My Weather?</h1>
+		<h1 align="center">What's My Weather</h1>
 	</header>
+
 	<div id="input-field">
 		<p>City <input type="text" id="city"></p>
 		<p>State <input type="text" id="state"></p>
-		<button id="check-weather">Tell Me Now!</button>
+		<button id="check-weather" class="btn-success">GET</button>
 	</div>
 
 	<div id="my-weather">
