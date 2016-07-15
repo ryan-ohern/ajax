@@ -9,11 +9,11 @@ var port = process.env.PORT || 8080;
 // app.use(express.static(__dirname + '/public'));
 // app.use('/static', express.static(__dirname + './public'));
 // app.use(express.static(path.join(__dirname + './public')));
-// app.use(express.static('./public'));
+app.use(express.static('public'));
 
-process.env.PWD = process.cwd();
+// process.env.PWD = process.cwd();
 
-app.use(express.static(process.env.PWD+'/public'));
+// app.use(express.static(process.env.PWD+'/public'));
 
 
 // set the home page route
