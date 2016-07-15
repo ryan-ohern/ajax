@@ -31,9 +31,9 @@
 		header {
 			background-image: url('http://www.wallpaperawesome.com/wallpapers-awesome/wallpapers-weather-clouds-tornado-rain-cyclone-flashlights-awesome/wallpaper-massive-clouds-weather.jpg');
 			background-color: #668899;
-			height: 265px;
+			height: 350px;
 			width: 100%;
-			margin: 0 -9999rem;
+			margin: -20px -9999rem 0 -9999rem;
 			padding: .25rem 9999rem;
 		}
 
@@ -43,9 +43,18 @@
 			padding: 65px 0 0 0;
 		}
 
+		hr {
+			  padding: 0;
+			  border: none;
+			  border-top: solid 5px;
+			  text-align: center;
+			  max-width: 350px;
+			  margin: 25px auto 30px;
+			  color:white;
+		}
+
 		h1,
 		h2,
-		h3,
 		h4,
 		h5,
 		h6 {
@@ -54,6 +63,11 @@
 		  font-weight: 700;
 		}
 
+		h3 {
+			color: white;
+			font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 24px;
+		}
 		/*h1 {
 			color: white;
 			font-size: 44px;
@@ -61,11 +75,13 @@
 
 		#input-field {
 			width: 30%;
-			margin: 10px auto;
+			margin: 50px auto;
 			/*border: 1px solid black;*/
-			background-color: #eeeeee;
+			background-color: transparent;
 			text-align: center;
 			padding: 15px;
+			height: 170px;
+
 		}
 
 		#input-field p {
@@ -76,9 +92,17 @@
 		}
 
 		input {
-			width: 200px;
+			width: 100%;
 			height: 40px;
 			font-size: 20px;
+			/*border-top: ;*/
+			border-right: transparent;
+			border-left: transparent;
+			border-bottom: transparent;
+		}
+
+		input:focus { 
+    		/*border-color:transparent;*/
 		}
 
 		#check-weather {
@@ -98,11 +122,25 @@
 		  font-weight: 700;
 		}
 
+		#container1 {
+			background-color: white;
+			width: 100%;
+			margin: 0 -9999rem;
+			padding: .25rem 9999rem;
+		}
+
+		#container2 {
+			background-color: #2C3E50;
+			width: 100%;
+			margin: 0 -9999rem;
+			padding: .25rem 9999rem;
+		}
+
 		#my-weather {
 			width: 30%;
 			margin: 0px auto;
 			/*border: 1px solid black;*/
-			background-color: #eee;
+			background-color: transparent;
 			padding: 0px 0 0 0;
 		}
 
@@ -110,11 +148,11 @@
 			text-align: left;
 			/*margin: 0 15px 15px 15px;*/
 			font-size: 22px;
-			color: #333;
+			color: white;
 		}
 
 		.feedback {
-			color: #668899;
+			color: #eeeeee;
 			font-size: 18px;
 			font-weight: lighter;
 			height: 30px;
@@ -125,14 +163,19 @@
 <body>
 	<header>
 		<h1 align="center">What's My Weather</h1>
+		<hr>
+		<h3 align="center">Get Current Weather From Any City</h3>
 	</header>
 
+<div id="container1">
 	<div id="input-field">
-		<p>City <input type="text" id="city"></p>
-		<p>State <input type="text" id="state"></p>
+		<p><input type="text" placeholder ="City" id="city"></p>
+		<p><input type="text" placeholder ="State" id="state"></p>
 		<button id="check-weather" class="btn-success">GET</button>
 	</div>
+</div>
 
+<div id="container2">
 	<div id="my-weather">
 
 		<p><b>Current Location: </b><br>
@@ -148,7 +191,7 @@
 		<p><b>Sunscreen? </b><br>
 			<span id="sunscreen" class="feedback"></span></p>		
 	</div>
-
+</div>
 
 <!--SCRIPTS-->
 
