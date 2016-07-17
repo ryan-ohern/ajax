@@ -9,7 +9,7 @@ var port = process.env.PORT || 8080;
 // app.use(express.static(__dirname + '/public'));
 // app.use('/static', express.static(__dirname + './public'));
 // app.use(express.static(path.join(__dirname + './public')));
-// app.use(express.static('./public/weather.css'));
+// app.use(express.static('public'));
 
 // process.env.PWD = process.cwd();
 
